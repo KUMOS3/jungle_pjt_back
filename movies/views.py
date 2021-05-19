@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_list_or_404, get_object_or_404
+from django.shortcuts import get_list_or_404, get_object_or_404
 from .models import Movie
 from .serializers import MovieListSerializer
 
@@ -14,9 +14,9 @@ def movie_list(request):
         movies = get_list_or_404(Movie)
         serializer = MovieListSerializer(movies, many=True)
         return Response(serializer.data)
-    elif request.method == 'POST':
-        serializer = MovieListSerializer(data=request.data)
-        if serializer.is_valid(raise_exception=True):
-            serializer.save()
-            return Response(serializer.data)
+    # elif request.method == 'POST':
+    #     serializer = MovieListSerializer(data=request.data)
+    #     if serializer.is_valid(raise_exception=True):
+    #         serializer.save()
+    #         return Response(serializer.data)
         # return Response(serializer.errors, status=400)
