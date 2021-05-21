@@ -12,9 +12,9 @@ class Movie(models.Model):
     vote_count = models.IntegerField(null=True)
     vote_average = models.IntegerField(null=True)
     popularity = models.IntegerField(null=True)
-    movie_like_users = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='like_movies')
-    movie_dislike_users = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='dislike_movies')
-    wish_users = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='wish_movies')
+    movie_like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_movies')
+    movie_dislike_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='dislike_movies')
+    movie_wish_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='wish_movies')
     # review_like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_reviews')
     # favorite_movie = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     

@@ -34,7 +34,6 @@ def profile(request, pk):
         User = get_user_model()
         user_info = User.objects.get(pk=pk)
         serializer = UserInfoSerializer(user_info)
-        print(serializer)
         return Response(serializer.data)
 
 # def profile(request, user_pk):
