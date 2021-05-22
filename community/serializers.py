@@ -11,6 +11,7 @@ class CommentSerializer(serializers.ModelSerializer):
     class Meta():
         model = Comment
         fields = '__all__'
+        read_only_fields = ('review',)
 
 class ReviewSerializer(serializers.ModelSerializer):
     # article과 연결되어있는 comment들을 다 가져온다.
@@ -28,3 +29,4 @@ class LikeSerializer(serializers.ModelSerializer):
         model = Review
         # 추후 업적 시스템에 활용할 데이터들
         fields = '__all__'
+
