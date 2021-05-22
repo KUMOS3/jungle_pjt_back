@@ -128,6 +128,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+# app내의 static 디렉토리 경로를 사용하는 것(기본 경로) 외에 추가적인 정적 파일 경로 정의
+# STATICFILES_DIRS = [
+#     BASE_DIR / 'crud' / 'static',
+# ]
+
+
 
 AUTH_USER_MODEL = 'accounts.User'
 

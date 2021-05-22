@@ -12,7 +12,7 @@ class Review(models.Model):
     num_choices = zip(range(1,6), range(1,6))
     movie_rate = models.IntegerField(choices=num_choices, blank=True)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    review_like_users = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='like_reviews')
+    review_like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_reviews')
 
 
 class Comment(models.Model):
