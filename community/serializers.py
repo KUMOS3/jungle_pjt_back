@@ -22,4 +22,11 @@ class ReviewSerializer(serializers.ModelSerializer):
     class Meta():
         model = Review
         fields = '__all__'
-        read_only_fields = ('review_like_users',)
+
+# 리뷰 좋아요 후 response하는 serializer
+class LikeSerializer(serializers.ModelSerializer):
+    class Meta():
+        model = Review
+        # 추후 업적 시스템에 활용할 데이터들
+        fields = '__all__'
+
