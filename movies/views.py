@@ -34,10 +34,9 @@ def like(request, movie_pk):
         like_status = {
             'liked': liked
         }
-        print(movie.movie_like_users)
         return JsonResponse(like_status)# json 형태로 반환
     elif request.method == 'POST':
-        print('like')
+        print(movie.movie_like_users)
         # 좋아요 해제
         # if request.user in review.like_users.all():
         # if movie.movie_like_users.filter(pk=request.user.pk).exists():
@@ -50,8 +49,6 @@ def like(request, movie_pk):
             if movie.movie_dislike_users.filter(pk=request.user.pk).exists():
                 movie.movie_dislike_users.remove(request.user)
             # liked = True # flag
-        print(movie.movie_like_users)
-        print(movie.movie_dislike_users)
         serializer = LikeSerializer(movie)
         return Response(serializer.data)
 
@@ -95,9 +92,9 @@ def wish(request, movie_pk):
     movie = get_object_or_404(Movie, pk=movie_pk)
     if request.method == 'GET':
         if movie.movie_wish_users.filter(pk=request.user.pk):
-            wished = False
-        else:
             wished = True
+        else:
+            wished = False
         wish_status = {
             'wished': wished
         }
@@ -109,7 +106,6 @@ def wish(request, movie_pk):
         else:
             movie.movie_wish_users.add(request.user)
         serializer = WishSerializer(movie)
-        print(serializer.data)
         return Response(serializer.data)
 
 
