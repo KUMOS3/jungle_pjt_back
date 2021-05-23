@@ -17,7 +17,7 @@ class Movie(models.Model):
     release_date = models.CharField(max_length=50, null=True) 
     title = models.CharField(max_length=50, null=True)
     vote_average = models.IntegerField(null=True)
-
+    
     vote_count = models.IntegerField(null=True)
     
     movie_like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_movies', blank=True)
@@ -30,5 +30,7 @@ class Movie(models.Model):
     # favorite_movie = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     
 class Genre(models.Model):
+    movies = models.ManyToManyField(Movie, related_name='genres')
+    id = models.IntegerField(primary_key=True, unique=True)
     name = models.CharField(max_length=50)
-    favorite_users = models.ForeignKey(settings.AUTH_USER_MODEL,  on_delete=models.CASCADE, related_name='favorite_genres')
+    favorite_users = models.ForeignKey(settings.AUTH_USER_MODEL,  on_delete=models.CASCADE, related_name='favorite_genres', null=True)
