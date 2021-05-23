@@ -1,12 +1,16 @@
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .serializers import UserLoginSerializer, UserInfoSerializer
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.decorators import authentication_classes, permission_classes
+from .serializers import UserLoginSerializer, UserInfoSerializer, UserSignupSerializer
 from django.contrib.auth import get_user_model
 from django.shortcuts import get_list_or_404, get_object_or_404
 from .models import User
 
 @api_view(['POST'])
+@authentication_classes([])
+@permission_classes([])
 def signup(request):
 	#1-1. Client에서 온 데이터를 받아서
     password = request.data.get('password')
@@ -17,7 +21,7 @@ def signup(request):
         return Response({'error': '비밀번호가 일치하지 않습니다.'}, status=status.HTTP_400_BAD_REQUEST)
 		
 	#2. UserLoginSerializer 통해 데이터 직렬화
-    serializer = UserLoginSerializer(data=request.data)
+    serializer = UserSignupSerializer(data=request.data)
     
 	#3. validation 작업 진행 -> password도 같이 직렬화 진행
     if serializer.is_valid(raise_exception=True):

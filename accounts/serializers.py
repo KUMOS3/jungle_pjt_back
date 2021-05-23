@@ -1,7 +1,6 @@
+from movies.serializers import LikeMoviesSerializer, DislikeMoviesSerializer, WishMoviesSerializer
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
-from movies.serializers import LikeMoviesSerializer, DislikeMoviesSerializer, WishMoviesSerializer
-
 User = get_user_model()
 
 class UserLoginSerializer(serializers.ModelSerializer):
@@ -10,6 +9,19 @@ class UserLoginSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('username', 'password',)
+
+class UserSignupSerializer(serializers.ModelSerializer):
+    password = serializers.CharField(write_only=True)
+
+    class Meta:
+        model = User
+        fields = [
+            'username',
+            'password',
+            'nickname',
+            'favorite_movie',
+            'birth_year',
+            ]
 
 
 class UserInfoSerializer(serializers.ModelSerializer):
