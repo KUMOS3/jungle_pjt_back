@@ -17,11 +17,15 @@ class Movie(models.Model):
     release_date = models.CharField(max_length=50, null=True) 
     title = models.CharField(max_length=50, null=True)
     vote_average = models.IntegerField(null=True)
+
     vote_count = models.IntegerField(null=True)
     
     movie_like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_movies', blank=True)
     movie_dislike_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='dislike_movies', blank=True)
     movie_wish_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='wish_movies', blank=True)
+
+   
+
     # review_like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_reviews')
     # favorite_movie = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     
