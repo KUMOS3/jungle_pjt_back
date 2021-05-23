@@ -1,9 +1,15 @@
 from rest_framework import serializers
 from .models import Movie
+from .models import MovieRecommend
 
 class MovieListSerializer(serializers.ModelSerializer):
     class Meta():
         model = Movie
+        fields = '__all__'
+
+class MovieRecommendSerializer(serializers.ModelSerializer):
+    class Meta():
+        model = MovieRecommend
         fields = '__all__'
 
 #  좋아요 후 response하는 serializer

@@ -34,3 +34,8 @@ class Genre(models.Model):
     id = models.IntegerField(primary_key=True, unique=True)
     name = models.CharField(max_length=50)
     favorite_users = models.ForeignKey(settings.AUTH_USER_MODEL,  on_delete=models.CASCADE, related_name='favorite_genres', null=True)
+
+class MovieRecommend(models.Model):
+    title = models.CharField(max_length=50)
+    genre = models.CharField(max_length=50)
+    poster_path = models.TextField(null=True)
