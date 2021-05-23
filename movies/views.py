@@ -1,6 +1,7 @@
 from django.shortcuts import get_list_or_404, get_object_or_404
 from .models import Movie
-from .serializers import MovieListSerializer, LikeSerializer, DislikeSerializer, WishSerializer
+from .models import MovieRecommend
+from .serializers import MovieListSerializer, MovieRecommendSerializer, LikeSerializer, DislikeSerializer, WishSerializer
 from django.http.response import JsonResponse
 
 from rest_framework import status
@@ -8,6 +9,14 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
 # Create your views here.
+
+@api_view(['GET'])
+def recommendation(request):
+    if request.method == 'GET':
+        movie_recommend = get_list_or_404(MovieRecommend)
+        serializer = MovieListSerializer(movie_recommend, many=True)
+        return Response(serializer.data)
+
 
 @api_view(['GET', 'POST'])
 def movie_list(request):
