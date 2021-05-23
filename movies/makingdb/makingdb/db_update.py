@@ -26,7 +26,7 @@ def ranking(i):
 
 if __name__ == '__main__':
 
-    file_path = "./fixtures/movies/moviedb_original.json"
+    file_path = ".movies/fixtures/movies/moviedb_original.json"
 
     data = []
     with open(file_path, "r") as json_file:
@@ -42,11 +42,11 @@ if __name__ == '__main__':
     # !!!!!!!!!!!!! 꼭 두개 다 해놔야 함 !!!!!!!!!!!!!!!!!!!
 
     # 1. 인코딩 안된 것 (원본, 데이터 추가시 사용)
-    file_path = "./fixtures/movies/moviedb_original.json"
+    file_path = ".movies/fixtures/movies/moviedb_original.json"
     with open(file_path, 'w') as outfile:
         json.dump(data, outfile, indent=4)
 
     # 2. 인코딩 된 것. 실제 서버의 데이터로 사용
-    file_path2 = "./fixtures/movies/moviedb_encoded.json"
+    file_path2 = ".movies/fixtures/movies/moviedb_encoded.json"
     with open(file_path2, 'w', encoding='UTF-8-sig') as outfile:
         json.dump(data, outfile, indent=4, ensure_ascii=False)

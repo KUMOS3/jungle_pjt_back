@@ -57,30 +57,83 @@ def ranking(i):
     
 
 if __name__ == '__main__':
-    # popular 영화 평점순 5개 출력
-    for i in range(1, 6):
-        pprint(ranking(i))
+
+    genre_path = "movies/fixtures/movies/genredb_original.json"
+
+    genredb = []
+    with open(genre_path, "r") as json_file:
+        genredb = json.load(json_file)
 
     data = []
-
-    # data = ranking() # 장르
+    # popular 영화 평점순 5개 출력
     for i in range(1, 6):
         data += ranking(i)
+
+    # 장르 구조 만들기, 아직 mtom필드인 movies는 작성되지 않았음.
+    genres = []
+    for g in genredb:
+        genre = {}
+        genre["pk"] = g["id"]
+        genre["model"] = "movies.genre"
+
+        fields = {}
+        fields["name"] = g["name"]
+        fields["movies"] = []
+        # fields["favorite_users"] = []
+
+        genre["fields"] = fields
+        genres.append(genre)
+
+    # 영화 구조 만들기
+    movies = []
+    for d in data:
+        movie_id = d.pop("id")
+
+        movie = {}
+        movie["pk"] = movie_id
+        movie["model"] = "movies.movie"
+
+        fields = {}
+        # del d["genre_ids"]
+        del d["original_language"]
+        del d["video"]
+        fields = d
+        fields["movie_like_users"] = ""
+        fields["movie_dislike_users"] = ""
+        fields["movie_wish_users"] = ""
+
+        # 장르 아이디들로 장르모델에 영화 mtom연결하기
+        for movie_genre in d["genre_ids"]:
+            for genre in genres:
+                if genre["pk"] == movie_genre:
+                    genre["fields"]["movies"].append(movie_id)
+
+        movie["fields"] = fields
+        movies.append(movie)
+
+    # for genre in genres:
+    #     genre["fields"]["movies"] = JSON.parse(genre["fields"]["movies"])
+    # data = ranking() # 장르
 
     # pprint(data)
 
     # !!!!!!!!!!!!! 꼭 두개 다 해놔야 함 !!!!!!!!!!!!!!!!!!!
 
-    #1. 인코딩 안된 것 (원본, 데이터 추가시 사용)
-    file_path = "./fixtures/movies/moviedb_original.json"
-    with open(file_path, 'w') as outfile:
-        json.dump(data, outfile, indent=4)
+    # #1. 인코딩 안된 것 (원본, 데이터 추가시 사용)
+    # file_path = "movies/fixtures/movies/moviedb_original.json"
+    # with open(file_path, 'w') as outfile:
+    #     json.dump(data, outfile, indent=4)
 
     # 2. 인코딩 된 것. 실제 서버의 데이터로 사용
-    # file_path2 = "./fixtures/movies/genredb.json" # 장르
-    file_path2 = "./fixtures/movies/moviedb_encoded.json"
-    with open(file_path2, 'w', encoding='UTF-8-sig') as outfile:
-        json.dump(data, outfile, indent=4, ensure_ascii=False)
+    # file_path2 = "/fixtures/movies/genredb.json" # 장르
+    # file_path2 = "movies/fixtures/movies/moviedb_encoded.json"
+    # with open(file_path2, 'w', encoding='UTF-8') as outfile:
+    #     json.dump(movies, outfile, indent=4, ensure_ascii=False)
+
+    file_path2 = "movies/fixtures/movies/test.json"
+    with open(file_path2, 'w', encoding='UTF-8') as outfile:
+        json.dump(genres, outfile, indent=4, ensure_ascii=False)
+
 
 
 
