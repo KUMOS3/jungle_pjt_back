@@ -7,8 +7,8 @@ class URLMaker:
     def __init__(self, key):
         self.key = key
 
-    def get_url(self, category='movie', feature='top_rated', **kwargs):
-    # def get_url(self, category='genre', feature='movie/list', **kwargs): # 장르
+    # def get_url(self, category='movie', feature='top_rated', **kwargs):
+    def get_url(self, category='genre', feature='movie/list', **kwargs): # 장르
         url = f'{self.url}/{category}/{feature}'
         url += f'?api_key={self.key}'
 
