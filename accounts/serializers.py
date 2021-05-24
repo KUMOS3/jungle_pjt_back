@@ -1,6 +1,8 @@
 from movies.serializers import LikeMoviesSerializer, DislikeMoviesSerializer, WishMoviesSerializer
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
+from movies.serializers import LikeMoviesSerializer, DislikeMoviesSerializer, WishMoviesSerializer
+from .models import User
 User = get_user_model()
 
 class UserLoginSerializer(serializers.ModelSerializer):
