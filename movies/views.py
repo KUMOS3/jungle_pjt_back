@@ -3,10 +3,10 @@ from .models import Movie
 from .models import MovieRecommend
 from .serializers import MovieListSerializer, MovieRecommendSerializer, LikeSerializer, DislikeSerializer, WishSerializer
 from django.http.response import JsonResponse
-
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
+from pprintpp import pprint
 
 # Create your views here.
 
@@ -29,7 +29,7 @@ def movie_list(request):
     #     if serializer.is_valid(raise_exception=True):
     #         serializer.save()
     #         return Response(serializer.data)
-        # return Response(serializer.errors, status=400)
+        # return Response(serializer.errors, status=400)s
 
 @api_view(['GET', 'POST'])
 def like(request, movie_pk):

@@ -1,11 +1,26 @@
 from rest_framework import serializers
 from .models import Movie
 from .models import MovieRecommend
+from .models import Genre
+
+class GenreSerializer(serializers.ModelSerializer):
+    class Meta():
+        model = Genre
+        fields = ['name']
 
 class MovieListSerializer(serializers.ModelSerializer):
+    genres = GenreSerializer(many=True)
+
     class Meta():
         model = Movie
         fields = '__all__'
+
+# 리뷰에서 개별 무비 id를 기반으로 이름을 알려주는 serializer
+class MovieNameSerializer(serializers.ModelSerializer):
+    class Meta():
+        model = Movie
+        fields = ['title', 'id', 'overview']
+
 
 class MovieRecommendSerializer(serializers.ModelSerializer):
     class Meta():

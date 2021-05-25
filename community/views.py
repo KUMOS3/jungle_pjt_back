@@ -1,6 +1,6 @@
 from django.shortcuts import get_list_or_404, get_object_or_404
 from .models import Review
-from .serializers import ReviewListSerializer, ReviewSerializer, LikeSerializer, CommentSerializer
+from .serializers import ReviewSerializer, LikeSerializer, CommentSerializer, CreateReviewSerializer
 from django.http.response import JsonResponse
 
 from rest_framework import status
@@ -16,7 +16,8 @@ def review_list(request):
         serializer = ReviewSerializer(reviews, many=True)
         return Response(serializer.data)
     elif request.method == 'POST':
-        serializer = ReviewSerializer(data=request.data)
+        print(request.data)
+        serializer = CreateReviewSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
