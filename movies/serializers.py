@@ -53,17 +53,17 @@ class WishSerializer(serializers.ModelSerializer):
 class LikeMoviesSerializer(serializers.ModelSerializer):
     class Meta():
         model = Movie
-        fields = ['id']
+        fields = ['id', 'title']
 
 class DislikeMoviesSerializer(serializers.ModelSerializer):
     class Meta():
         model = Movie
-        fields = ['id']
+        fields = ['id', 'title']
 
 class WishMoviesSerializer(serializers.ModelSerializer):
     class Meta():
         model = Movie
-        fields = ['id']
+        fields = ['id', 'title']
     # movie_like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_movies')
     # movie_dislike_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='dislike_movies')
     # wish_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='wish_movies')
