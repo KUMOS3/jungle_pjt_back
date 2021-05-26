@@ -3,7 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.decorators import authentication_classes, permission_classes
-from .serializers import UserLoginSerializer, UserInfoSerializer, UserSignupSerializer, AchieveSerializer
+from .serializers import UserLoginSerializer, UserInfoSerializer, UserSignupSerializer, AchievementSerializer
 from django.contrib.auth import get_user_model
 from django.shortcuts import get_list_or_404, get_object_or_404
 from .models import User, Achievement
@@ -42,12 +42,21 @@ def profile(request, pk):
 
 
 @api_view(['GET', 'POST'])
-def achievement(request, pk):
-    if request.method == 'POST':
-        achievement = get_object_or_404(Achievement, pk=pk)
-        
-        achievement.achieved_users.add(request.user)
-            # liked = True # flag
-        serializer = AchieveSerializer(achievement)
-        print(serializer.data)
+def achievement(request):
+    if request.method == 'GET':
+        achievements = get_list_or_404(Achievement)
+        serializer = AchievementSerializer(achievements, many=True)
         return Response(serializer.data)
+
+    # if request.method == 'POST':
+    #     achievement = get_object_or_404(Achievement, pk=pk)
+    #     achievement.achieved_users.add(request.user)
+    #     print(request.user)
+    #     user_info = User.objects.get(username=request.user)
+    #     print(user_info)
+    #         # liked = True # flag
+    #     serializer = AchieveSerializer(achievement)
+    #     if len(user_info.like_movies) == 1:
+    #         serializer.data["acheive"] = 
+    #     print(serializer.data)
+    #     return Response(serializer.data)

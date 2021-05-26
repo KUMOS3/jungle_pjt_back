@@ -40,6 +40,7 @@ class UserInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = [
+            'id',
             'last_login',
             'username',
             'date_joined',
@@ -63,3 +64,23 @@ class AchieveSerializer(serializers.ModelSerializer):
         model = Achievement
         # 추후 업적 시스템에 활용할 데이터들
         fields = '__all__'
+
+
+class UserNameSerializer(serializers.ModelSerializer):
+    like_movies = LikeMoviesSerializer(many=True)
+    dislike_movies = LikeMoviesSerializer(many=True)
+    wish_movies = LikeMoviesSerializer(many=True)
+    achievements = AchievementSerializer(many=True)
+    
+    class Meta():
+        model = User
+        fields = [
+            'id',
+            'last_login',
+            'nickname',
+            'favorite_movie',
+            'like_movies',
+            'dislike_movies',
+            'wish_movies',
+            'achievements'
+        ]

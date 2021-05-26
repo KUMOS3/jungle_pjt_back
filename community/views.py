@@ -14,6 +14,7 @@ def review_list(request):
     if request.method == 'GET':
         reviews = get_list_or_404(Review)
         serializer = ReviewSerializer(reviews, many=True)
+        print(serializer.data)
         return Response(serializer.data)
     elif request.method == 'POST':
         print(request.data)

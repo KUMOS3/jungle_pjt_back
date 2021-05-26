@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Review, Comment
 from movies.serializers import MovieNameSerializer
+from accounts.serializers import UserNameSerializer
 
 
 class CommentSerializer(serializers.ModelSerializer):
@@ -15,7 +16,7 @@ class ReviewSerializer(serializers.ModelSerializer):
     # comments = serializers.PrimaryKeyRelatedField(many=True, read_only=True)  
     comments = CommentSerializer(many=True, read_only=True)
     # comment_count = serializers.IntegerField(source='comment_set.count', read_only=True) # 숫자로 변환해서 저장해주는 필드
-    
+    user = UserNameSerializer(read_only=True)
     movie = MovieNameSerializer(read_only=True)
 
     class Meta():
