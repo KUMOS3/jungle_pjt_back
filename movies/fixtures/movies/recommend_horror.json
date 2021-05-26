@@ -1,0 +1,138 @@
+[
+    {
+        "pk": 632357,
+        "model": "movies.movie",
+        "fields": {
+            "adult": false,
+            "backdrop_path": "/blk6UPEoaKwlFIEuHWhVEuTQULC.jpg",
+            "genre_ids": [
+                27
+            ],
+            "original_title": "The Unholy",
+            "overview": "Alice, a young hearing-impaired girl who, after a supposed visitation from the Virgin Mary, is inexplicably able to hear, speak and heal the sick. As word spreads and people from near and far flock to witness her miracles, a disgraced journalist hoping to revive his career visits the small New England town to investigate. When terrifying events begin to happen all around, he starts to question if these phenomena are the works of the Virgin Mary or something much more sinister.",
+            "popularity": 1878.397,
+            "poster_path": "/lcCKVNQKAqZlLI5qNRJK8MPahbI.jpg",
+            "release_date": "2021-03-31",
+            "title": "The Unholy",
+            "vote_average": 7.3,
+            "vote_count": 301,
+            "movie_like_users": "",
+            "movie_dislike_users": "",
+            "movie_wish_users": ""
+        }
+    },
+    {
+        "pk": 573680,
+        "model": "movies.movie",
+        "fields": {
+            "adult": false,
+            "backdrop_path": "/xrAaJAn3hqkInq5kE1AGJqIGXyT.jpg",
+            "genre_ids": [
+                27
+            ],
+            "original_title": "The Banishing",
+            "overview": "In the 1930s, a young reverend and his family are forced to confront their worst fears when they discover their new home holds a horrifying secret.",
+            "popularity": 1382.464,
+            "poster_path": "/xD9mc8JCVXA8T8u4Od7qOUBuGH4.jpg",
+            "release_date": "2021-04-29",
+            "title": "The Banishing",
+            "vote_average": 7.1,
+            "vote_count": 10,
+            "movie_like_users": "",
+            "movie_dislike_users": "",
+            "movie_wish_users": ""
+        }
+    },
+    {
+        "pk": 503736,
+        "model": "movies.movie",
+        "fields": {
+            "adult": false,
+            "backdrop_path": "/c0izdYdnTe4uMRifHgvTA85wPz0.jpg",
+            "genre_ids": [
+                28,
+                27,
+                53
+            ],
+            "original_title": "Army of the Dead",
+            "overview": "Following a zombie outbreak in Las Vegas, a group of mercenaries take the ultimate gamble: venturing into the quarantine zone to pull off the greatest heist ever attempted.",
+            "popularity": 1205.478,
+            "poster_path": "/x3taBaWfRzw1NIKhEPpKPwKBAOC.jpg",
+            "release_date": "2021-05-14",
+            "title": "Army of the Dead",
+            "vote_average": 6.7,
+            "vote_count": 842,
+            "movie_like_users": "",
+            "movie_dislike_users": "",
+            "movie_wish_users": ""
+        }
+    },
+    {
+        "pk": 632357,
+        "model": "movies.movie",
+        "fields": {
+            "adult": false,
+            "backdrop_path": "/blk6UPEoaKwlFIEuHWhVEuTQULC.jpg",
+            "genre_ids": [
+                27
+            ],
+            "original_title": "The Unholy",
+            "overview": "Alice, a young hearing-impaired girl who, after a supposed visitation from the Virgin Mary, is inexplicably able to hear, speak and heal the sick. As word spreads and people from near and far flock to witness her miracles, a disgraced journalist hoping to revive his career visits the small New England town to investigate. When terrifying events begin to happen all around, he starts to question if these phenomena are the works of the Virgin Mary or something much more sinister.",
+            "popularity": 1878.397,
+            "poster_path": "/lcCKVNQKAqZlLI5qNRJK8MPahbI.jpg",
+            "release_date": "2021-03-31",
+            "title": "The Unholy",
+            "vote_average": 7.3,
+            "vote_count": 301,
+            "movie_like_users": "",
+            "movie_dislike_users": "",
+            "movie_wish_users": ""
+        }
+    },
+    {
+        "pk": 573680,
+        "model": "movies.movie",
+        "fields": {
+            "adult": false,
+            "backdrop_path": "/xrAaJAn3hqkInq5kE1AGJqIGXyT.jpg",
+            "genre_ids": [
+                27
+            ],
+            "original_title": "The Banishing",
+            "overview": "In the 1930s, a young reverend and his family are forced to confront their worst fears when they discover their new home holds a horrifying secret.",
+            "popularity": 1382.464,
+            "poster_path": "/xD9mc8JCVXA8T8u4Od7qOUBuGH4.jpg",
+            "release_date": "2021-04-29",
+            "title": "The Banishing",
+            "vote_average": 7.1,
+            "vote_count": 10,
+            "movie_like_users": "",
+            "movie_dislike_users": "",
+            "movie_wish_users": ""
+        }
+    },
+    {
+        "pk": 503736,
+        "model": "movies.movie",
+        "fields": {
+            "adult": false,
+            "backdrop_path": "/c0izdYdnTe4uMRifHgvTA85wPz0.jpg",
+            "genre_ids": [
+                28,
+                27,
+                53
+            ],
+            "original_title": "Army of the Dead",
+            "overview": "Following a zombie outbreak in Las Vegas, a group of mercenaries take the ultimate gamble: venturing into the quarantine zone to pull off the greatest heist ever attempted.",
+            "popularity": 1205.478,
+            "poster_path": "/x3taBaWfRzw1NIKhEPpKPwKBAOC.jpg",
+            "release_date": "2021-05-14",
+            "title": "Army of the Dead",
+            "vote_average": 6.7,
+            "vote_count": 842,
+            "movie_like_users": "",
+            "movie_dislike_users": "",
+            "movie_wish_users": ""
+        }
+    }
+]
