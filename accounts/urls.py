@@ -9,4 +9,5 @@ urlpatterns = [
     # 토큰 라이브러리 주소
     path('api-token-auth/', obtain_jwt_token),
     path('<int:pk>/profile/', views.profile),
+    path('<int:pk>/achievement/', views.achievement),
 ]

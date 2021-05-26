@@ -1,0 +1,92 @@
+[
+{
+    "model": "accounts.achievement",
+    "pk": 1,
+    "fields": {
+        "name": "정글 탐색을 시작한",
+        "content": "첫 좋아요를 누름",
+        "achieved_users": []
+    }
+},
+{
+    "model": "accounts.achievement",
+    "pk": 2,
+    "fields": {
+        "name": "호불호가 생긴",
+        "content": "첫 싫어요를 누름",
+        "achieved_users": []
+    }
+},
+{
+    "model": "accounts.achievement",
+    "pk": 3,
+    "fields": {
+        "name": "취향이 생긴",
+        "content": "첫 찜하기를 누름",
+        "achieved_users": []
+    }
+},
+{
+    "model": "accounts.achievement",
+    "pk": 4,
+    "fields": {
+        "name": "의견이 생긴",
+        "content": "첫 리뷰를 작성함",
+        "achieved_users": []
+    }
+},
+{
+    "model": "accounts.achievement",
+    "pk": 5,
+    "fields": {
+        "name": "소통을 시작한",
+        "content": "첫 댓글을 작성함",
+        "achieved_users": []
+    }
+},
+{
+    "model": "accounts.achievement",
+    "pk": 6,
+    "fields": {
+        "name": "사랑이 넘쳐나는",
+        "content": "좋아요 3개 달성",
+        "achieved_users": []
+    }
+},
+{
+    "model": "accounts.achievement",
+    "pk": 7,
+    "fields": {
+        "name": "아닌건 아니라고 말하는",
+        "content": "싫어요 3개 달성",
+        "achieved_users": []
+    }
+},
+{
+    "model": "accounts.achievement",
+    "pk": 8,
+    "fields": {
+        "name": "보석을 수집하는",
+        "content": "찜하기 3개 달성",
+        "achieved_users": []
+    }
+},
+{
+    "model": "accounts.achievement",
+    "pk": 9,
+    "fields": {
+        "name": "토론장으로 나온",
+        "content": "리뷰작성 3개 달성",
+        "achieved_users": []
+    }
+},
+{
+    "model": "accounts.achievement",
+    "pk": 10,
+    "fields": {
+        "name": "입이 트인",
+        "content": "댓글작성 3개 달성",
+        "achieved_users": []
+    }
+}
+]
