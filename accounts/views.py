@@ -49,4 +49,5 @@ def achievement(request, pk):
         achievement.achieved_users.add(request.user)
             # liked = True # flag
         serializer = AchieveSerializer(achievement)
+        print(serializer.data)
         return Response(serializer.data)
