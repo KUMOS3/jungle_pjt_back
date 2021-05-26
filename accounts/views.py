@@ -3,10 +3,10 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.decorators import authentication_classes, permission_classes
-from .serializers import UserLoginSerializer, UserInfoSerializer, UserSignupSerializer
+from .serializers import UserLoginSerializer, UserInfoSerializer, UserSignupSerializer, AchieveSerializer
 from django.contrib.auth import get_user_model
 from django.shortcuts import get_list_or_404, get_object_or_404
-from .models import User
+from .models import User, Achievement
 
 @api_view(['POST'])
 @authentication_classes([])
@@ -40,9 +40,13 @@ def profile(request, pk):
         serializer = UserInfoSerializer(user_info)
         return Response(serializer.data)
 
-# def profile(request, user_pk):
-#     if request.method == 'GET':
-#         user_info = get_object_or_404(User, pk=user_pk)
-#         serializer = UserInfoSerializer(user_info)
-#         return Response(serializer.data)        
-    
+
+@api_view(['GET', 'POST'])
+def achievement(request, pk):
+    if request.method == 'POST':
+        achievement = get_object_or_404(Achievement, pk=pk)
+        
+        achievement.achieved_users.add(request.user)
+            # liked = True # flag
+        serializer = AchieveSerializer(achievement)
+        return Response(serializer.data)

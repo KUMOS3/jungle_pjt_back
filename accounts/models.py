@@ -7,6 +7,7 @@ class User(AbstractUser):
     favorite_movie = models.CharField(max_length=50)
     birth_year = models.IntegerField(null=True)
 
-class Acheivement(models.Model):
+class Achievement(models.Model):
     name = models.CharField(max_length=20)
-    acheived_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='acheivements', blank=True)
+    content = models.TextField()
+    achieved_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='achievements', blank=True)
