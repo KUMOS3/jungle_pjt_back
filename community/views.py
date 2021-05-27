@@ -2,7 +2,6 @@ from django.shortcuts import get_list_or_404, get_object_or_404
 from .models import Review
 from .serializers import ReviewSerializer, LikeSerializer, CommentSerializer, CreateReviewSerializer
 from django.http.response import JsonResponse
-
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
