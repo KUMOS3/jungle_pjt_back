@@ -84,3 +84,15 @@ class UserNameSerializer(serializers.ModelSerializer):
             'wish_movies',
             'achievements'
         ]
+
+class UserAcheSerializer(serializers.ModelSerializer):
+    achievements = AchievementSerializer(many=True)
+    
+    class Meta():
+        model = User
+        fields = [
+            'id',
+            'last_login',
+            'nickname',
+            'achievements'
+        ]

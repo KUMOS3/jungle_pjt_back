@@ -64,7 +64,7 @@ if __name__ == '__main__':
 
     data = []
     # popular 영화 평점순 5개 출력
-    for i in range(1, 3):
+    for i in range(1, 6):
         data += ranking(i)
 
     # 장르 구조 만들기, 아직 mtom필드인 movies는 작성되지 않았음.
@@ -127,9 +127,9 @@ if __name__ == '__main__':
     with open(file_path2, 'w', encoding='UTF-8') as outfile:
         json.dump(movies, outfile, indent=4, ensure_ascii=False)
 
-    file_path3 = "./fixtures/movies/genredb.json" # 장르
-    with open(file_path3, 'w', encoding='UTF-8') as outfile:
-        json.dump(genres, outfile, indent=4, ensure_ascii=False)
+    # file_path3 = "./fixtures/movies/genredb.json" # 장르
+    # with open(file_path3, 'w', encoding='UTF-8') as outfile:
+    #     json.dump(genres, outfile, indent=4, ensure_ascii=False)
 
 
 

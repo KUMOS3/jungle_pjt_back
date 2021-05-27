@@ -46,17 +46,18 @@ def achievement(request):
     if request.method == 'GET':
         achievements = get_list_or_404(Achievement)
         serializer = AchievementSerializer(achievements, many=True)
+        print(serializer.data)
         return Response(serializer.data)
 
     # if request.method == 'POST':
     #     achievement = get_object_or_404(Achievement, pk=pk)
     #     achievement.achieved_users.add(request.user)
-    #     print(request.user)
-    #     user_info = User.objects.get(username=request.user)
-    #     print(user_info)
+    #     # print(request.user)
+    #     # user_info = User.objects.get(username=request.user)
+    #     # print(user_info)
     #         # liked = True # flag
     #     serializer = AchieveSerializer(achievement)
-    #     if len(user_info.like_movies) == 1:
-    #         serializer.data["acheive"] = 
+    #     # if len(user_info.like_movies) == 1:
+    #     #     serializer.data["acheive"] = 
     #     print(serializer.data)
     #     return Response(serializer.data)

@@ -7,6 +7,9 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from pprintpp import pprint
+from accounts.models import User, Achievement
+from accounts.serializers import UserAcheSerializer
+
 
 # Create your views here.
 
@@ -45,12 +48,16 @@ def like(request, movie_pk):
         }
         return JsonResponse(like_status)# json 형태로 반환
     elif request.method == 'POST':
-        print(movie.movie_like_users)
         # 좋아요 해제
         # if request.user in review.like_users.all():
         # if movie.movie_like_users.filter(pk=request.user.pk).exists():
         if movie.movie_like_users.filter(pk=request.user.pk).exists():
             movie.movie_like_users.remove(request.user)
+
+            user_info = User.objects.get(username=request.user)
+            serializer = LikeSerializer(movie)
+            return Response(serializer.data)
+            # print(user_info)
             # liked = False
         # 좋아요 눌렀으므로 좋아요 리스트 추가, 별로에요 리스트에 있다면 해제
         else:
@@ -58,8 +65,21 @@ def like(request, movie_pk):
             if movie.movie_dislike_users.filter(pk=request.user.pk).exists():
                 movie.movie_dislike_users.remove(request.user)
             # liked = True # flag
-        serializer = LikeSerializer(movie)
-        return Response(serializer.data)
+            achievement = None
+            if request.user.like_movies.count() == 1:
+                achievement = get_object_or_404(Achievement, pk=1)
+            elif request.user.like_movies.count() == 3:
+                achievement = get_object_or_404(Achievement, pk=6)
+            elif request.user.like_movies.count() == 5:
+                achievement = get_object_or_404(Achievement, pk=11)
+            if achievement:
+                achievement.achieved_users.add(request.user)
+            
+            serializer = UserAcheSerializer(request.user)
+            # print(serializer.data)
+            # if serializer.data.acheivements.filter(id=1).exists():
+            #     print(serializer.data.achievements.get(1))
+            return Response(serializer.data)
 
         # (사용함!)
         # # 아니면

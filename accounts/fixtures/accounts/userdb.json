@@ -1,0 +1,233 @@
+[
+  {
+    "model": "accounts.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$7QcYVC2AZIdsPOnIX0Wo4p$/pMho9gI3yf3DNuB0fn179+ZB97LYsHJ5cMuQ+CgppA=",
+      "last_login": "2021-05-27T06:56:50.364Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2021-05-27T06:56:44.324Z",
+      "nickname": "",
+      "favorite_movie": "",
+      "birth_year": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "accounts.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$1ZxEKv0IPcUJkQTyk1g1l3$Sx+X0XzhTVAOzfSBNwOw5SurvO/T7RhpkOQDzhn/GaY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "kumos1",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-05-27T07:03:46.364Z",
+      "nickname": "helia",
+      "favorite_movie": "BIGHERO",
+      "birth_year": 1996,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "accounts.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$1ZxEKv0IPcUJkQTyk1g1l3$Sx+X0XzhTVAOzfSBNwOw5SurvO/T7RhpkOQDzhn/GaY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "kumos2",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-05-27T07:03:46.364Z",
+      "nickname": "max",
+      "favorite_movie": "Shutter Island",
+      "birth_year": 1996,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "accounts.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$1ZxEKv0IPcUJkQTyk1g1l3$Sx+X0XzhTVAOzfSBNwOw5SurvO/T7RhpkOQDzhn/GaY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Bestie",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-05-27T07:03:46.364Z",
+      "nickname": "helia",
+      "favorite_movie": "The Shawshank Redemption",
+      "birth_year": 1996,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "accounts.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$1ZxEKv0IPcUJkQTyk1g1l3$Sx+X0XzhTVAOzfSBNwOw5SurvO/T7RhpkOQDzhn/GaY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Senorita",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-05-27T07:03:46.364Z",
+      "nickname": "helia",
+      "favorite_movie": "The Godfather",
+      "birth_year": 1996,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "accounts.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$1ZxEKv0IPcUJkQTyk1g1l3$Sx+X0XzhTVAOzfSBNwOw5SurvO/T7RhpkOQDzhn/GaY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Amigo",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-05-27T07:03:46.364Z",
+      "nickname": "helia",
+      "favorite_movie": "The Dark Knight",
+      "birth_year": 1996,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "accounts.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$1ZxEKv0IPcUJkQTyk1g1l3$Sx+X0XzhTVAOzfSBNwOw5SurvO/T7RhpkOQDzhn/GaY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "kumos6",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-05-27T07:03:46.364Z",
+      "nickname": "Rapunzel",
+      "favorite_movie": "12 Angry Men",
+      "birth_year": 1996,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "accounts.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$1ZxEKv0IPcUJkQTyk1g1l3$Sx+X0XzhTVAOzfSBNwOw5SurvO/T7RhpkOQDzhn/GaY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "kumos7",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-05-27T07:03:46.364Z",
+      "nickname": "Dolly",
+      "favorite_movie": "The Lord of the Rings",
+      "birth_year": 1996,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "accounts.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$1ZxEKv0IPcUJkQTyk1g1l3$Sx+X0XzhTVAOzfSBNwOw5SurvO/T7RhpkOQDzhn/GaY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "kumos8",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-05-27T07:03:46.364Z",
+      "nickname": "Dottie",
+      "favorite_movie": "Inception",
+      "birth_year": 1996,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "accounts.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$1ZxEKv0IPcUJkQTyk1g1l3$Sx+X0XzhTVAOzfSBNwOw5SurvO/T7RhpkOQDzhn/GaY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "kumos9",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-05-27T07:03:46.364Z",
+      "nickname": "Lovey",
+      "favorite_movie": "Star Wars",
+      "birth_year": 1996,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "accounts.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$1ZxEKv0IPcUJkQTyk1g1l3$Sx+X0XzhTVAOzfSBNwOw5SurvO/T7RhpkOQDzhn/GaY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "kumos10",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-05-27T07:03:46.364Z",
+      "nickname": "Rambo",
+      "favorite_movie": "The Good, The Bad And The Ugly",
+      "birth_year": 1996,
+      "groups": [],
+      "user_permissions": []
+    }
+  }
+]

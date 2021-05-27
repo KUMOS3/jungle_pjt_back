@@ -48,7 +48,7 @@
     "model": "accounts.achievement",
     "pk": 6,
     "fields": {
-        "name": "사랑이 넘쳐나는",
+        "name": "불 피우기 시작한",
         "content": "좋아요 3개 달성",
         "achieved_users": []
     }
@@ -86,6 +86,15 @@
     "fields": {
         "name": "입이 트인",
         "content": "댓글작성 3개 달성",
+        "achieved_users": []
+    }
+},
+{
+    "model": "accounts.achievement",
+    "pk": 11,
+    "fields": {
+        "name": "화끈한",
+        "content": "좋아요 5개 달성",
         "achieved_users": []
     }
 }
